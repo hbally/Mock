@@ -1,0 +1,28 @@
+apply plugin: 'com.android.library'
+
+//[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+//    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    provided 'com.google.android:android:4.1.1.4'
+    compile project(':mockserver')
+}

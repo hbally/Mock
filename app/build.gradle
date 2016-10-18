@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    jcenter()
+
+    maven { url "http://oss.sonatype.org/content/repositories/snapshots/" }
+}
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.example.yaoli.mock"
+        minSdkVersion 19
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled false
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+//    applicationVariants.all { variant ->
+//        variant.outputs.each { output ->
+//            def file = output.outputFile
+//            output.outputFile = new File(file.parent, "mock-V" + defaultConfig.versionName + ".apk")
+//        }
+//    }
+}
+
+dependencies {
+    //    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.2.0'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+        compile project(':androidstubserver')
+    compile 'me.neavo:volley:2014.12.09'
+//    compile 'com.byoutline.androidstubserver:stubserver:2.0.0-SNAPSHOT'
+//    compile 'com.byoutline.mockserver:mockserver:2.0.0-SNAPSHOT'
+    //    compile 'com.byoutline.androidstubserver:stubserver:1.4.1'
+}
