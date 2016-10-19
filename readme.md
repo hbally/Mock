@@ -1,6 +1,6 @@
 ##  本地搭建服务器，测试api接口
 
-####1. 引用工程
+#### 1. 引用工程
 
      compile project(':androidstubserver')
     
@@ -9,7 +9,8 @@
     compile 'com.byoutline.androidstubserver:stubserver:2.0.0-SNAPSHOT'
     
     
-####2. 在assets目录下配置api接口，主要是config.json;
+#### 2. 在assets目录下配置api接口，主要是config.json; 
+
 ```java {
       "requests": [
         {
@@ -27,12 +28,13 @@
         ...
 ```
 
-####3. Application 中初始化
+#### 3. Application 中初始化
   `AndroidStubServer.start(this, NetworkType.UMTS);`
 
-####4. 处理http GET,请求无差别
+#### 4. 处理http GET,请求无差别
 
 ## License
+
 ```text
  Copyright 2016 li yao
 
